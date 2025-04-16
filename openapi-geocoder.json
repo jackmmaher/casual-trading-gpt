@@ -1,0 +1,51 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Geocode Place Names",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://263b4294-54ef-4639-b69e-0445c5d57657-00-3gpvng0oe7mf1.picard.replit.dev"
+    }
+  ],
+  "paths": {
+    "/geocode": {
+      "get": {
+        "operationId": "getCoordinatesFromPlace",
+        "summary": "Get coordinates (lat/lon) from a town or location name",
+        "parameters": [
+          {
+            "name": "eircode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The town name or partial address"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Latitude and longitude of the place",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "string"
+                    },
+                    "lon": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
