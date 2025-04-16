@@ -20,7 +20,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "type": "object",
+                  "properties": {
+                    "features": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "properties": {
+                            "type": "object",
+                            "properties": {
+                              "Location_Desc": { "type": "string" },
+                              "Symbol_Type": { "type": "string" },
+                              "Description": { "type": "string" },
+                              "Area_LEA": { "type": "string" },
+                              "Lat": { "type": "number" },
+                              "Long": { "type": "number" }
+                            }
+                          },
+                          "geometry": {
+                            "type": "object",
+                            "properties": {
+                              "coordinates": {
+                                "type": "array",
+                                "items": { "type": "number" }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
