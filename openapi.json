@@ -12,21 +12,33 @@
   "paths": {
     "/jackmmaher/casual-trading-gpt/main/Casual_Trading_Mapping.geojson": {
       "get": {
-        "operationId": "getTradingData",
-        "summary": "Get casual trading site data",
+        "operationId": "getCasualTradingData",
+        "summary": "Returns casual trading sites in Ireland as GeoJSON",
         "responses": {
           "200": {
-            "description": "A list of casual trading sites",
+            "description": "GeoJSON with trading site locations",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
+                    "type": { "type": "string" },
                     "features": {
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
+                          "type": { "type": "string" },
+                          "geometry": {
+                            "type": "object",
+                            "properties": {
+                              "type": { "type": "string" },
+                              "coordinates": {
+                                "type": "array",
+                                "items": { "type": "number" }
+                              }
+                            }
+                          },
                           "properties": {
                             "type": "object",
                             "properties": {
@@ -36,15 +48,6 @@
                               "Area_LEA": { "type": "string" },
                               "Lat": { "type": "number" },
                               "Long": { "type": "number" }
-                            }
-                          },
-                          "geometry": {
-                            "type": "object",
-                            "properties": {
-                              "coordinates": {
-                                "type": "array",
-                                "items": { "type": "number" }
-                              }
                             }
                           }
                         }
