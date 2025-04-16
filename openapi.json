@@ -1,0 +1,32 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Casual Trading Data API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://raw.githubusercontent.com"
+    }
+  ],
+  "paths": {
+    "/jackmmaher/casual-trading-gpt/main/Casual_Trading_Mapping.geojson": {
+      "get": {
+        "operationId": "getTradingData",
+        "summary": "Get casual trading site data",
+        "responses": {
+          "200": {
+            "description": "A list of casual trading sites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
